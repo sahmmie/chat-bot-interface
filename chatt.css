@@ -1,0 +1,256 @@
+:root {
+    --main-color: #fcbe15;
+    --bg-color: #E0E0E0;
+    --second-color: #E0E0E0;
+    ;
+    --my-messages-color: #9FA8DA;
+    --size: 2px;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: body-animation 1s ease forwards;
+}
+
+.possy {
+    /* font: sans-serif; */
+    font-family: 'Cambria', Cochin, Georgia, Times, Times New Roman, serif;
+    font-weight: 600;
+    margin-right: auto;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.card {
+    background: #fff;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 0;
+    animation: card-animation 1s 1s ease forwards;
+}
+
+.card__header {
+    height: 80px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: header-animation 1s 2s ease forwards;
+}
+
+.card__main {
+    padding: 40px 20px;
+}
+
+.card__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--second-color);
+    opacity: 0;
+    animation: footer-animation 1s 2s ease forwards;
+}
+
+.figure {
+    display: block;
+    background: var(--second-color);
+}
+
+.line {
+    width: 50px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.line_small {
+    height: 1px;
+    width: 100%;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.burger {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.form__input {
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+    transform: scaleX(0);
+    animation: input-animation .5s 4s ease forwards;
+    width: -webkit-fill-available;
+}
+
+.form__send {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    transform: scale(0);
+    animation: send-animation .5s 4.5s ease forwards;
+}
+
+.burger__line {
+    height: 3px;
+    width: 35px;
+}
+
+.burger__line_second {
+    animation: burger-animation .5s 2.5s forwards;
+}
+
+.card__message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    transform: scale(0);
+    animation: msg-animation 1s 3s ease forwards;
+}
+
+.card__message_my {
+    align-items: flex-end;
+}
+
+.card__message-box {
+    background: var(--second-color);
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.card__message-box_my {
+    background: var(--my-messages-color);
+}
+
+
+/* Animations */
+
+.loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader__element {
+    border-radius: 100%;
+    border: var(--size) solid var(--second-color);
+    margin: calc(var(--size)*2);
+}
+
+.loader__element:nth-child(1) {
+    animation: preloader .9s ease-in-out alternate infinite;
+}
+
+.loader__element:nth-child(2) {
+    animation: preloader .9s ease-in-out alternate .3s infinite;
+}
+
+.loader__element:nth-child(3) {
+    animation: preloader .9s ease-in-out alternate .6s infinite;
+}
+
+@keyframes preloader {
+    100% {
+        border: var(--size) solid var(--main-color);
+        transform: scale(2);
+    }
+}
+
+@keyframes body-animation {
+    100% {
+        background: var(--bg-color);
+    }
+}
+
+@keyframes card-animation {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes header-animation {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes burger-animation {
+    100% {
+        transform: scaleX(0.5) translateX(15px);
+    }
+}
+
+@keyframes msg-animation {
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes footer-animation {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes input-animation {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes send-animation {
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes card-animation {
+    100% {
+        opacity: 1;
+    }
+}
